@@ -1,24 +1,39 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 環境構築
 
-Things you may want to cover:
+### rubyのinstall
 
-* Ruby version
+```
+$ rbenv install $(cat .ruby-version)
+$ rbenv local $(cat .ruby-version)
+```
 
-* System dependencies
+### bundler install
 
-* Configuration
+```
+$ gem install bundler
+```
 
-* Database creation
+### 依存gemのinstall
+初回
 
-* Database initialization
+```
+$ bundle install --path vendor/bundle --without production
+```
 
-* How to run the test suite
+2回目以降
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+$ bundle install
+```
 
-* Deployment instructions
+### db migration
+```
+$ rake db:migrate
+```
 
-* ...
+### seedの投入
+```
+$ rake db:seed
+```
