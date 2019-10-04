@@ -41,4 +41,10 @@ $ rake db:seed
 ### mecabの設定
 ```
 $ brew install mecab
+$ brew install mecab-ipadic
+```
+
+## サーバの起動
+```
+$ bin/rails s
 ```
