@@ -1,0 +1,8 @@
+<div>
+  <%= form_for(@post) do |f| %>
+  <%= f.label :message %>
+  <%= f.text_field :message %>
+
+  <%= f.submit "呟く" %>
+  <% end %>
+</div>
