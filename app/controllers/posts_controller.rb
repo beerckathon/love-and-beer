@@ -22,10 +22,12 @@ class PostsController < ApplicationController
   private
 
   def post_params
+    nm = Natto::MeCab.new
+    binding.pry
     params.require(:post).permit(:message)
     {
       message: params.require(:post).permit(:message)[:message],
-      content: params.require(:post).permit(:message)[:message]
+      content: nm.parse(params.require(:post).permit(:message)[:message])
     }
   end
 end
