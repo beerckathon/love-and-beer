@@ -37,3 +37,8 @@ $ rake db:migrate
 ```
 $ rake db:seed
 ```
+
+### mecabの設定
+```
+$ brew install mecab
+```
