@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <header class="container-fluid absoluted-top">
+  <header class="header container-fluid sticky-top">
     <div class="row">
       <div class="col-md-12 bg-beer">
         <div class="header-content">
@@ -26,10 +26,12 @@
   <% flash.each do |message_type, message| %>
   <div class="alert alert-<%= message_type %>"><%= message %></div>
   <% end %>
+
   <%= yield %>
-  <footer class="container-fluid bottom">
+
+  <footer class="container-fluid fixed-bottom">
       <div class="row">
-          <div class="col-md-12 text-center text-white bg-beer">
+          <div class="col-12 text-center text-white bg-beer">
               <p>Copyright © 2019 delta All rights reserved.</p>
           </div>
       </div>
