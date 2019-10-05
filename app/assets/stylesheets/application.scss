@@ -29,12 +29,17 @@ body{
 $primary-color: #FAC503;
 .bg-beer{
     background-color: $primary-color; 
+    background-size: cover;
 } 
+
+.text-beer{
+    color: $primary-color;
+}
 
 .bg-1{
     background-image: url(beer-3803425_1920.jpg);
     background-size: cover;
+    height: 700px;
+    position: relative;
 } 
-.footer{
-    position: fixed;
-}
+

@@ -4,13 +4,17 @@
       <div class="col-4 mx-auto">
         <h1 class="text-light">Beerckathon</h1>
         <% @posts.each do |post|%>
-          <div class="post_content">
+          <div class="post_content my-3">
             <div class="user_name">
               <%= post.user.name%>
             </div>
-            <div class="content">
+            <div class="content bg-light text-beer">
             <%= post.content%>
             </div>
+            <%= post.created_at%>
+            <%= post.updated_at%>
+          </div>
+          <div>
             <%= post.created_at%>
             <%= post.updated_at%>
           </div>
