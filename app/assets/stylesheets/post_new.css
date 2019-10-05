@@ -21,8 +21,8 @@
     padding: 10px 24px;
     border-radius: 4px;
     border-bottom: 4px solid #d37800;
+    margin-bottom: 20px;
   }
-  
   .btn-push:active {
       transform: translateY(4px);
       border-bottom: none;

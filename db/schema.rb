@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_04_174613) do
+ActiveRecord::Schema.define(version: 2019_10_05_040913) do
+
+  create_table "ngwords", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.integer "user_id"
@@ -30,6 +36,7 @@ ActiveRecord::Schema.define(version: 2019_10_04_174613) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "cheer", default: 0
     t.index ["login_id"], name: "index_users_on_login_id", unique: true
   end
 
