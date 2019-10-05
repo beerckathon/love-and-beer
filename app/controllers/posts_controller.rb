@@ -24,7 +24,6 @@ class PostsController < ApplicationController
   end
 
   def cheer
-    binding.pry
     @post = Post.find_by(id: params[:post_id])
     if @post.destroy
       @user = User.find_by(id: params[:user_id])
