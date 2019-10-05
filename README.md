@@ -14,6 +14,12 @@ $ rbenv install $(cat .ruby-version)
 $ gem install bundler
 ```
 
+### mecabの設定
+```
+$ brew install mecab
+$ brew install mecab-ipadic
+```
+
 ### 依存gemのinstall
 初回
 
@@ -37,11 +43,7 @@ $ rake db:migrate
 $ rake db:seed
 ```
 
-### mecabの設定
-```
-$ brew install mecab
-$ brew install mecab-ipadic
-```
+
 
 ## サーバの起動
 ```
