@@ -30,8 +30,8 @@
           <li><span class="glyphicon glyphicon-home"></span><%= link_to "Post", new_post_path %></li>          
         <% else%>
           <li><span class="glyphicon glyphicon-home"></span><%= link_to "Home", root_path %></li>
-          <li><span class="glyphicon glyphicon-book"></span><%= link_to "Signup", new_user_registration_path %></li>
-          <li><span class="glyphicon glyphicon-log-in"></span><%= link_to "login", new_user_session_path %></li>
+          <li><span class="glyphicon glyphicon-book"></span><%= link_to "Signup", new_user_path %></li>
+          <li><span class="glyphicon glyphicon-log-in"></span><%= link_to "login", login_path %></li>
         <% end%>
 
       </ul>
