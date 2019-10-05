@@ -5,6 +5,10 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def temp
+    @posts = Post.all
+  end
+
   def index
     @posts = Post.all
   end
@@ -19,14 +23,31 @@ class PostsController < ApplicationController
     end
   end
 
+  def cheer
+    @post = Post.find_by(id: params[:post_id])
+    if @post.destroy
+      @user = User.find_by(id: params[:user_id])
+      @user.cheer += 1
+      @user.save
+    end
+  end
+
   private
 
   def post_params
     nm = Natto::MeCab.new
+    content = ""
+    nm.parse(params.require(:post).permit(:message)[:message]) do |n|
+      if Ngword.exists?(name: n.feature.split(",")[7])
+        content += "🍺" * n.surface.length
+      else
+        content += n.surface
+      end
+    end
     params.require(:post).permit(:message)
     {
       message: params.require(:post).permit(:message)[:message],
-      content: nm.parse(params.require(:post).permit(:message)[:message])
+      content: content
     }
   end
 end
