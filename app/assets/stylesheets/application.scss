@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap-sprockets";
+@import "bootstrap"; 
+
+.bg-1{
+    background-image: url(images/beer-3803425_1920.jpg);
+}
