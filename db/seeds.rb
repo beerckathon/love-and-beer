@@ -10,7 +10,16 @@ unless User.exists?(login_id: 'deltama')
   User.create(name: 'delta', login_id: 'deltama', password: '123456')
 end
 
+ActiveRecord::Base.connection.execute("delete from posts;")
 Post.create(user_id: 1, message: 'こんにちは', content: 'こんにちは')
 Post.create(user_id: 1, message: 'おはよう', content: 'おはよう')
 Post.create(user_id: 1, message: 'こんばんは', content: 'こんばんは')
 Post.create(user_id: 1, message: 'おやすみ', content: 'おやすみ')
+
+ActiveRecord::Base.connection.execute("delete from ngwords;")
+Ngword.create(name: "死ね")
+Ngword.create(name: "しね")
+Ngword.create(name: "死ぬ")
+Ngword.create(name: "しぬ")
+Ngword.create(name: "嫌う")
+Ngword.create(name: "きらう")
