@@ -5,7 +5,7 @@
   <title>LoveAndBeer</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
@@ -27,9 +27,9 @@
   <div class="alert alert-<%= message_type %>"><%= message %></div>
   <% end %>
   <%= yield %>
-  <footer class="container-fluid bg-danger bottom py-3">
+  <footer class="container-fluid bg-danger bottom py-3 fixed-bottom">
       <div class="row">
-          <div class="col-md-12 text-center text-white bg-beer footer">
+          <div class="col-md-12 text-center text-white bg-beer">
               <p>Copyright © 2019 delta All rights reserved.</p>
           </div>
       </div>
