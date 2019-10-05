@@ -1,18 +1,20 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-12 bg-1">
-      <div class="col-4 mx-auto">
+    <div class="col-12 bg-1 fixed-bg py-5">
+      <div class="col-12 col-lg-8 mx-auto fixed-bg">
         <h1 class="text-light">Beerckathon</h1>
         <% @posts.each do |post|%>
-          <div class="post_content my-3">
-            <div class="user_name">
+          <div class="post_content my-5">
+            <div class="user_name font-weight-bold">
               <%= post.user.name%>
             </div>
-            <div class="content bg-light text-beer">
+            <div class="content bg-light text-beer font-weight-bold">
             <%= post.content%>
-            </div>
+            <div class="bottom">
             <%= post.created_at%>
             <%= post.updated_at%>
+            </div>
+          </div>
           </div>
           <div>
             <%= post.created_at%>
