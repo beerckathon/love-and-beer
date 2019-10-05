@@ -3,12 +3,11 @@
 <% @posts.each do |post|%>
 <div>
   <%= post.content%>
-  <%= button_to 'destroy', {:controller => "posts", :action => "cheer", :user_id => post.user.id, :post_id=> post.id} , :method=>:post, class: "js-modal-open"  %>
+  <button class="js-modal-open" id=<%= post.id%>>destroy</button>
   <div class="modal js-modal">
     <div class="modal__bg js-modal-close"></div>
     <div class="modal__content">
-      <%= image_tag "cheer.gif", alt: "Rails icon", id: "public", class: "image", width: "300px" %>
-      <a class="js-modal-close" href="">閉じる</a>
+      <%= image_tag "cheer.gif", alt: "Rails icon", id: "public", class: "image", width: "100%" %>
     </div>
   </div>
 </div>
@@ -17,11 +16,18 @@
 <script>
   $(function () {
     $('.js-modal-open').on('click', function () {
+      var post_id =  $(this).attr("id");
+      $.ajax({
+        type: 'POST',
+        url: '/cheer',
+        data: {
+          post_id: post_id
+        },
+        dataType: 'json' //json形式指定
+      })
       $('.js-modal').fadeIn();
-      return false;
-    });
-    $('.js-modal-close').on('click', function () {
-      $('.js-modal').fadeOut();
+      $('.js-modal').delay(500).fadeOut("slow");
+      $(this).parent().remove();
       return false;
     });
   });
