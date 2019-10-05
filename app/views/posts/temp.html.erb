@@ -27,6 +27,7 @@
       })
       $('.js-modal').fadeIn();
       $('.js-modal').delay(500).fadeOut("slow");
+      $(this).parent().remove();
       return false;
     });
   });
