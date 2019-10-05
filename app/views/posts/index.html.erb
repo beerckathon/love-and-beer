@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-<% @posts.each do |post|%>
-  <div>
-    <%= post.content%>
-  </div>
-<%end%>
-=======
 <div class="container">
   <div class="row">
     <div class="col-12">
@@ -14,9 +7,12 @@
           <div>
             <%= post.content%>
           </div>
+          <div>
+            <%= post.created_at%>
+            <%= post.updated_at%>
+          </div>
         <%end%>
       </div>
     </div>
   </div>
 </div>
->>>>>>> 7eca2ed95a9ec1f18396dd5b40f81ffb4bb7ff1d
