@@ -11,8 +11,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      flash[:success] = 'Welcome to the Sample App!'
-      redirect_to user_path(@user.login_id)
+      redirect_to root_path
     else
       render 'new'
     end
