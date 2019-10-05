@@ -6,7 +6,6 @@
 
 ```
 $ rbenv install $(cat .ruby-version)
-$ rbenv local $(cat .ruby-version)
 ```
 
 ### bundler install
