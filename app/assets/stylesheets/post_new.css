@@ -23,7 +23,6 @@
     border-bottom: 4px solid #d37800;
     margin-bottom: 20px;
   }
-  
   .btn-push:active {
       transform: translateY(4px);
       border-bottom: none;
