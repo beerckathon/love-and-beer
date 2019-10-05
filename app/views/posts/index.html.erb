@@ -4,19 +4,52 @@
       <div class="col-12 col-lg-8 mx-auto fixed-bg">
         <h1 class="text-light">Beerckathon</h1>
         <% @posts.each do |post|%>
-          <div class="post_content my-5">
-            <div class="user_name font-weight-bold">
-              <%= post.user.name%>
-            </div>
-            <div class="content bg-light text-beer font-weight-bold">
+        <div class="post_content my-5">
+          <div class="user_name font-weight-bold">
+            <%= post.user.name%>
+          </div>
+          <div class="content bg-light text-beer font-weight-bold">
             <%= post.content%>
+
             <div class="bottom">
-            <%= post.created_at%>
+
+              <%= post.created_at.strftime("%Y-%m-%d %H:%M:%S")%>
+              <%# if post.user != current_user %>
+              <button class="js-modal-open" id=<%= post.id%>>乾杯</button>
+              <div class="modal js-modal">
+                <div class="modal__bg js-modal-close"></div>
+                <div class="modal__content">
+                  <%= image_tag "cheer.gif", alt: "Rails icon", id: "public", class: "image", width: "100%" %>
+                </div>
+              </div>
+              <%# end %>
             </div>
           </div>
-          </div>
+        </div>
         <%end%>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+  $(function () {
+    $('.js-modal-open').on('click', function () {
+      var post_id = $(this).attr("id");
+      $.ajax({
+        type: 'POST',
+        url: '/cheer',
+        data: {
+          post_id: post_id
+        },
+        dataType: 'json' //json形式指定
+      })
+      $('.js-modal').fadeIn();
+      $('.js-modal').delay(500).fadeOut("slow");
+      $(this).parent().parent().parent().remove();
+      $(this).parent().parent().remove();
+      $(this).parent().remove();
+      return false;
+    });
+  });
+</script>

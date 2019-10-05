@@ -1,12 +1,14 @@
 .post_new{
     margin:0 auto;
     width:600px;
+    color 
 }
 
 .post_title{
    font-size: 28px;
    font-weight: normal;
    margin-bottom:20px;
+   margin-top:20px;
 }
 
 .btn-push {
