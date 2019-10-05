@@ -13,3 +13,33 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap-sprockets";
+@import "bootstrap"; 
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    color: white;
+}
+
+$primary-color: #FAC503;
+.bg-beer{
+    background-color: $primary-color; 
+    background-size: cover;
+} 
+
+.text-beer{
+    color: $primary-color;
+}
+
+.bg-1{
+    background-image: url(beer-3803425_1920.jpg);
+    background-size: cover;
+    height: 700px;
+    position: relative;
+} 
+

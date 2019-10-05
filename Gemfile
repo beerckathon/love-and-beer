@@ -67,3 +67,6 @@ end
 gem 'natto'
 gem 'pry'
 gem 'pry-nav'
+
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'jquery-rails'
