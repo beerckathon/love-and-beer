@@ -45,7 +45,7 @@ $primary-color: #FAC503;
 }
 
 body{
-    background-image: url(beer-3803425_1920.jpg);
+    background-image: url("beer.jpg");
     background-size: cover;
     background-attachment: fixed;
     color: white;
@@ -60,4 +60,9 @@ header, footer{
 
 .black_color{
    color:black;
+}
+
+.btn{
+    opacity:1;
+    background-color:#D3C031;
 }
