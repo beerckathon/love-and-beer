@@ -1,6 +1,6 @@
 <% @posts.each do |post|%>
 <div>
   <%= post.content%>
-  <%= button_to 'destroy', {:controller => "posts", :action => "cheer", :user_id => post.user.id, :post_id=> post.id} , :method=>:post  %>
+  <%= button_to 'destroy', {:controller => "posts", :action => "cheer", :user_id => post.user.id, :post_id=> post.id} ,remote:true, :method=>:post  %>
 </div>
 <% end %>
