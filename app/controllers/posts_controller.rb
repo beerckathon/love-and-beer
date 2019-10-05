@@ -16,7 +16,6 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      flash[:success] = 'Post created!'
       redirect_to root_url
     else
       render 'new'
@@ -38,7 +37,7 @@ class PostsController < ApplicationController
     nm = Natto::MeCab.new
     content = ""
     nm.parse(params.require(:post).permit(:message)[:message]) do |n|
-      if Ngword.exists?(name: n.feature.split(",")[7])
+      if Ngword.exists?(name: n.feature.split(",")[6])
         content += "🍺" * n.surface.length
       else
         content += n.surface
