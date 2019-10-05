@@ -23,7 +23,7 @@
           <nav>
             <ul>
               <% if logged_in? %>
-                <ol class="float-right"><%= link_to "Logout", logout_path, class: "btn btn-secondary btn-default mr-5 mt-3 glyphicon glyphicon-log-out" %></ol>
+                <ol class="float-right"><%= link_to "Logout", logout_path, class: "btn btn-secondary btn-default mr-5 mt-3 glyphicon glyphicon-log-out",method: :delete  %></ol>
                 <ol class="float-right"><%= link_to "Post", new_post_path ,class: "glyphicon glyphicon-pencil btn btn-secondary btn-default mr-5 mt-3"%></ol>          
               <% end%>
             </ul>
