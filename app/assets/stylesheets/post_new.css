@@ -24,6 +24,7 @@
     border-radius: 4px;
     border-bottom: 4px solid #d37800;
     margin-bottom: 20px;
+    float:right;
   }
   .btn-push:active {
       transform: translateY(4px);
