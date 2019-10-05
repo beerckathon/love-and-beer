@@ -6,13 +6,18 @@
 
 ```
 $ rbenv install $(cat .ruby-version)
-$ rbenv local $(cat .ruby-version)
 ```
 
 ### bundler install
 
 ```
 $ gem install bundler
+```
+
+### mecabの設定
+```
+$ brew install mecab
+$ brew install mecab-ipadic
 ```
 
 ### 依存gemのinstall
@@ -36,4 +41,11 @@ $ rake db:migrate
 ### seedの投入
 ```
 $ rake db:seed
+```
+
+
+
+## サーバの起動
+```
+$ bin/rails s
 ```
